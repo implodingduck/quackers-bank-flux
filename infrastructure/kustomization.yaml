@@ -8,7 +8,6 @@ replacements:
       kind: Secret
       name: csi-driver-config
       namespace: cluster-config
-      fieldPath: data.USER_ASSIGNED_CLIENT_ID
     targets:
     - select:
         kind: ServiceAccount
@@ -24,7 +23,6 @@ replacements:
       kind: Secret
       name: csi-driver-config
       namespace: cluster-config
-      fieldPath: data.IDENTITY_TENANT
     targets:
     - select:
         kind: SecretProviderClass
@@ -35,7 +33,6 @@ replacements:
       kind: Secret
       name: csi-driver-config
       namespace: cluster-config
-      fieldPath: data.KEYVAULT_NAME
     targets:
     - select:
         kind: SecretProviderClass
