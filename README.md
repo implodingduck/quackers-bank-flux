@@ -5,3 +5,4 @@ kubectl create secret generic -n cluster-config csi-driver-config \
   --from-literal=IDENTITY_TENANT= \
   --from-literal=KEYVAULT_NAME=
 ```
+kubectl create configmap -n cluster-config csi-driver-config

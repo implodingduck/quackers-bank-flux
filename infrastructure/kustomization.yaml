@@ -5,7 +5,7 @@ resources:
   - csidriver.yaml
 replacements:
   - source:
-      kind: Secret
+      kind: ConfigMap
       name: csi-driver-config
       namespace: cluster-config
       fieldPath: data.USER_ASSIGNED_CLIENT_ID.value
@@ -21,7 +21,7 @@ replacements:
       fieldPaths:
         - spec.parameters.clientID.value
   - source:
-      kind: Secret
+      kind: ConfigMap
       name: csi-driver-config
       namespace: cluster-config
       fieldPath: data.IDENTITY_TENANT.value
@@ -32,7 +32,7 @@ replacements:
       fieldPaths:
         - spec.parameters.tenantId.value
   - source:
-      kind: Secret
+      kind: ConfigMap
       name: csi-driver-config
       namespace: cluster-config
       fieldPath: data.KEYVAULT_NAME.value
