@@ -6,7 +6,7 @@ resources:
 replacements:
   - source:
       kind: Secret
-      name: cluster-config
+      name: csi-driver-config
       fieldPath: data.USER_ASSIGNED_CLIENT_ID
     targets:
     - select:
@@ -21,7 +21,7 @@ replacements:
         - spec.parameters.clientID.value
   - source:
       kind: Secret
-      name: cluster-config
+      name: csi-driver-config
       fieldPath: data.IDENTITY_TENANT
     targets:
     - select:
@@ -31,7 +31,7 @@ replacements:
         - spec.parameters.tenantId.value
   - source:
       kind: Secret
-      name: cluster-config
+      name: csi-driver-config
     targets:
     - select:
         kind: SecretProviderClass
