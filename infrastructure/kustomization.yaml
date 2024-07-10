@@ -7,7 +7,6 @@ replacements:
   - source:
       kind: ConfigMap
       name: csi-driver-config
-      namespace: cluster-config
       fieldPath: data.USER_ASSIGNED_CLIENT_ID
     targets:
     - select:
@@ -23,7 +22,6 @@ replacements:
   - source:
       kind: ConfigMap
       name: csi-driver-config
-      namespace: cluster-config
       fieldPath: data.IDENTITY_TENANT
     targets:
     - select:
@@ -34,7 +32,6 @@ replacements:
   - source:
       kind: ConfigMap
       name: csi-driver-config
-      namespace: cluster-config
       fieldPath: data.KEYVAULT_NAME
     targets:
     - select:
