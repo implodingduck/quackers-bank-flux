@@ -7,6 +7,7 @@ replacements:
   - source:
       kind: Secret
       name: csi-driver-config
+      namespace: cluster-config
       fieldPath: data.USER_ASSIGNED_CLIENT_ID
     targets:
     - select:
@@ -22,6 +23,7 @@ replacements:
   - source:
       kind: Secret
       name: csi-driver-config
+      namespace: cluster-config
       fieldPath: data.IDENTITY_TENANT
     targets:
     - select:
@@ -32,10 +34,11 @@ replacements:
   - source:
       kind: Secret
       name: csi-driver-config
+      namespace: cluster-config
+      fieldPath: data.KEYVAULT_NAME
     targets:
     - select:
         kind: SecretProviderClass
         name: azure-sync-workload-identity
-        fieldPath: data.KEYVAULT_NAME
       fieldPaths:
         - spec.parameters.keyvaultName.value
