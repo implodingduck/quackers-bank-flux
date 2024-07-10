@@ -1,12 +1,12 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - configmap.yaml
+  - secrets.yaml
   - namespace.yaml
   - csidriver.yaml
 replacements:
   - source:
-      kind: ConfigMap
+      kind: Secret
       name: csi-driver-config
       fieldPath: data.USER_ASSIGNED_CLIENT_ID
     targets:
@@ -21,7 +21,7 @@ replacements:
       fieldPaths:
         - spec.parameters.clientID.value
   - source:
-      kind: ConfigMap
+      kind: Secret
       name: csi-driver-config
       fieldPath: data.IDENTITY_TENANT
     targets:
@@ -31,7 +31,7 @@ replacements:
       fieldPaths:
         - spec.parameters.tenantId.value
   - source:
-      kind: ConfigMap
+      kind: Secret
       name: csi-driver-config
       fieldPath: data.KEYVAULT_NAME
     targets:
