@@ -1,42 +1,5 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - secrets.yaml
   - namespace.yaml
-  - csidriver.yaml
-replacements:
-  - source:
-      kind: Secret
-      name: csi-driver-config
-      fieldPath: data.USER_ASSIGNED_CLIENT_ID
-    targets:
-    - select:
-        kind: ServiceAccount
-        name: uai-kvcsidriver-quackersbank
-      fieldPaths:
-        - metadata.annotations.[name=azure.workload.identity/client-id].value
-    - select: 
-        kind: SecretProviderClass
-        name: azure-sync-workload-identity
-      fieldPaths:
-        - spec.parameters.clientID.value
-  - source:
-      kind: Secret
-      name: csi-driver-config
-      fieldPath: data.IDENTITY_TENANT
-    targets:
-    - select:
-        kind: SecretProviderClass
-        name: azure-sync-workload-identity
-      fieldPaths:
-        - spec.parameters.tenantId.value
-  - source:
-      kind: Secret
-      name: csi-driver-config
-      fieldPath: data.KEYVAULT_NAME
-    targets:
-    - select:
-        kind: SecretProviderClass
-        name: azure-sync-workload-identity
-      fieldPaths:
-        - spec.parameters.keyvaultName.value
+  #- csidriver.yaml
