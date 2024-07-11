@@ -79,9 +79,6 @@ spec:
               name: workidsyncsecret
               key: transactionsscopes
         volumeMounts:
-        - name: app-props
-          mountPath: "/opt/target/config"
-          readOnly: true
         - name: secrets-store01-inline
           mountPath: "/mnt/secrets-store"
           readOnly: true
