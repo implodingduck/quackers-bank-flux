@@ -4,3 +4,4 @@ resources:
   - accounts-api.yaml
   - transactions-api.yaml
   - frontend.yaml
+  - helloworld.yaml
