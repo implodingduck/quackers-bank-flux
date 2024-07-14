@@ -5,3 +5,4 @@ resources:
   - transactions-api.yaml
   - frontend.yaml
   - helloworld.yaml
+  - ingress.yaml
