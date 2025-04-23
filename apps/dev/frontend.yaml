@@ -24,6 +24,8 @@ spec:
         ports:
         - containerPort: 8080
         env:
+        - name: APPLICATIONINSIGHTS_ROLE_NAME
+          value: frontend
         - name: ACCOUNTSAPI_BASEURL
           value: http://accounts-api
         - name: TRANSACTIONSAPI_BASEURL
